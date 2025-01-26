@@ -15,6 +15,26 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  animation: backgroundAnimation 12s infinite alternate; /* Menambahkan animasi */
+}
+
+/* Definisikan animasi perubahan warna latar belakang */
+@keyframes backgroundAnimation {
+  0% {
+    background-color: #f8c9d4; /* Warna pink muda */
+  }
+  25% {
+    background-color: #a8d8ff; /* Biru langit */
+  }
+  50% {
+    background-color: #f8e4a3; /* Kuning soft */
+  }
+  75% {
+    background-color: #d1f0d6; /* Hijau mint pastel */
+  }
+  100% {
+    background-color: #f8c9d4; /* Kembali ke warna pink muda */
+  }
 }
 
 /* Container for everything inside the background */
