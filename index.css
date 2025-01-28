@@ -1,80 +1,78 @@
-/* Reset the margin and padding */
+/* Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global font and color settings */
+/* Body Styling */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   color: #333;
-  background-color: #f8c9d4; /* Pink background */
+  background-color: #f8c9d4;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  animation: backgroundAnimation 12s infinite alternate; /* Menambahkan animasi */
+  animation: backgroundAnimation 12s infinite alternate;
 }
 
-/* Animasi perubahan warna latar belakang */
+/* Background Animation */
 @keyframes backgroundAnimation {
   0% {
-    background-color: #f8c9d4; /* Pink muda */
-  }
-  25% {
-    background-color: #a8d8ff; /* Biru langit */
+    background-color: #f8c9d4;
   }
   50% {
-    background-color: #f8e4a3; /* Kuning soft */
-  }
-  75% {
-    background-color: #d1f0d6; /* Hijau pastel */
+    background-color: #a8d8ff;
   }
   100% {
-    background-color: #f8c9d4;
+    background-color: #f8e4a3;
   }
 }
 
-/* Kontainer utama */
+/* Container */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   width: 100%;
 }
 
-/* Card Box Styling */
+/* Card Styling */
 .card-box {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   padding: 20px;
   margin-top: 20px;
-}
-
-/* Styling untuk teks */
-.text-above,
-.text-below {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  padding: 10px;
-  color: #333;
-}
-
-/* Styling untuk audio player */
-.audio-player {
-  margin-bottom: 20px; /* Tambahkan jarak di bawah */
   text-align: center;
 }
 
-/* Styling untuk gambar */
+/* Vidi's Card Box */
+.card-box-vidi {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: inherit; /* Ensure consistent font */
+}
+
+/* Text Sections */
+.text-above,
+.text-below {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family: inherit;
+}
+
+/* Image Section */
 .image-section img {
   max-width: 100%;
   height: auto;
@@ -82,25 +80,26 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling untuk Google Maps */
+/* Audio Player */
+.audio-player {
+  margin: 20px 0;
+}
+
+/* Map Section */
 .map-section iframe {
-  max-width: 100%;
+  width: 100%;
   height: 450px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
 }
 
-/* Responsiveness */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .card-box {
+    padding: 15px;
   }
   .text-above,
   .text-below {
     font-size: 1rem;
-  }
-  .card-box {
-    padding: 15px;
   }
 }
