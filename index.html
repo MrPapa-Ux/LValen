@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image, Map, and Music</title>
+    <title>Image, Map, Music & Love Letter</title>
+    <!-- File CSS utama -->
     <link rel="stylesheet" href="index.css" />
+
+    <!-- Font untuk Envelope Love Letter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       /* Splash Screen Styles */
       #splashScreen {
@@ -21,20 +31,20 @@
         opacity: 1; /* Opacity awal */
         transition: opacity 1s ease; /* Transisi untuk efek fade */
       }
-
       .splash-text {
         font-size: 2rem;
         color: #333;
       }
     </style>
   </head>
+
   <body>
     <!-- Splash Screen -->
     <div id="splashScreen">
       <div class="splash-text">Loading... 😊</div>
     </div>
 
-    <!-- Background Section -->
+    <!-- Container UTAMA -->
     <div class="container">
       <!-- New Card Box for Audio Player -->
       <div class="audio-card-box">
@@ -72,14 +82,14 @@
             audioPlayer.play(); // Play again
           });
 
-          // Menghapus splash screen setelah 3 detik dengan efek fade
+          // Menghapus splash screen setelah 4 detik dengan efek fade
           setTimeout(() => {
             const splashScreen = document.getElementById("splashScreen");
             splashScreen.style.opacity = "0"; // Mengubah opacity menjadi 0
             setTimeout(() => {
-              splashScreen.style.display = "none"; // Menghapus dari tampilan setelah transisi selesai
-            }, 1000); // Waktu yang sama dengan durasi transisi
-          }, 4000); // 4000 ms = 3 detik
+              splashScreen.style.display = "none"; // Hilangkan dari tampilan
+            }, 1000);
+          }, 4000); // 4000 ms = 4 detik
         </script>
       </div>
 
@@ -130,9 +140,11 @@
           <p>
             I see that you're quite close with Hernan, but that's not a problem
             (the problem would be if he were your boyfriend—I don't know the
-            specifics about you're relationship with him). To be honest, even
-            after doing all of this, I still don't feel confident. So the reason
-            why I'm doing all of this, because I feel responsible for my own
+            specifics about your relationship with him, but after observing you
+            two over the past week, it seems you're not as close as before. What
+            happened exactly? I'm just curious). To be honest, even after doing
+            all of this, I still don't feel confident. So the reason why I'm
+            doing all of this, is because I feel responsible for my own
             feelings.
           </p>
           <br />
@@ -164,14 +176,64 @@
           ></iframe>
         </div>
       </div>
+    </div>
 
-      <!-- Separate Card Box Section for Vidi's Introduction -->
-      <div class="card-box-vidi">
-        <p>
-          Oh, my name's Vidi. I apologize for the late introduction, but better
-          late than never (right?).
-        </p>
+    <!-- Amplop (Envelope) di bagian paling bawah -->
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <!-- Ubah isi surat di sini -->
+          <div class="words line1">
+            Oh, my name's Vidi. I apologize for the late introduction, but
+            better late than never (right?).
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+
+      <!-- Pindahkan tombol di dalam .envlope-wrapper agar lebih dekat -->
+      <div class="reset">
+        <button id="open">OPEN</button>
+        <button id="reset">CLOSE</button>
       </div>
     </div>
+
+    <!-- jQuery & Amplop JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var envelope = $("#envelope");
+        var btn_open = $("#open");
+        var btn_reset = $("#reset");
+
+        function openEnvelope() {
+          envelope.addClass("open").removeClass("close");
+        }
+        function closeEnvelope() {
+          envelope.addClass("close").removeClass("open");
+        }
+
+        // Klik pada amplop
+        envelope.click(function () {
+          openEnvelope();
+        });
+
+        // Klik tombol OPEN
+        btn_open.click(function () {
+          openEnvelope();
+        });
+
+        // Klik tombol CLOSE
+        btn_reset.click(function () {
+          closeEnvelope();
+        });
+      });
+    </script>
   </body>
 </html>
